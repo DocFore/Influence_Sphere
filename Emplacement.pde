@@ -11,9 +11,9 @@ class emplacement {
     rho = 0;
   }
   
-  void force(PVector soleil, PVector terre){
+  void force(PVector soleil, PVector terre, float mass){
     attractionSoleil = 6.67e-11*1.9891e30/pow(soleil.dist(this.position)*1000,2);
-    attractionPlanete = 6.67e-11*1.8986e27/pow(terre.dist(this.position)*1000,2);
+    attractionPlanete = 6.67e-11*mass/pow(terre.dist(this.position)*1000,2);
   }
   
   void copy(emplacement point){
