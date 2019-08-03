@@ -1,6 +1,6 @@
 class planete {
   float mass;
-  float semiMajorAxis;
+  long semiMajorAxis;
   float rapport;
   float highestPoint;
   float lowestPoint;
@@ -13,9 +13,9 @@ class planete {
   planete(String name) {
     nom = name;
     switch(name) {
-      
+
       case("Mercure"):
-      
+
       mass = 3.3011e23;
       semiMajorAxis = 57909230;
       rapport = 60;
@@ -26,7 +26,7 @@ class planete {
       sol = color(186, 186, 196);
       repertoireEnregistrement = "graduationSphereMercure/####.png";
       break;
-      
+
       case("Venus"):
       mass = 4.8685e24;
       semiMajorAxis = 108209500;
@@ -38,7 +38,7 @@ class planete {
       sol = color(228, 227, 225);
       repertoireEnregistrement = "graduationSphereVenus/####.png";
       break;
-    
+
       case("Terre"):
       nom = "la Terre";
       mass = 5.9736e24;
@@ -51,7 +51,7 @@ class planete {
       sol = color(6, 69, 173);
       repertoireEnregistrement = "graduationSphereTerre/####.png";
       break;
-      
+
       case("Mars"):
       mass = 4.8685e24;
       semiMajorAxis = 227944000;
@@ -63,7 +63,7 @@ class planete {
       sol = color(235, 127, 91);
       repertoireEnregistrement = "graduationSphereMars/####.png";
       break;
-      
+
       case("Jupiter"):
       mass = 1.8986e27;
       semiMajorAxis = 778340000;
@@ -75,15 +75,39 @@ class planete {
       sol = color(232, 211, 188);
       repertoireEnregistrement = "graduationSphereJupiter/####.png";
       break;
-      
+
       case("Saturne"):
       mass = 568.46e24;
       semiMajorAxis = 1426700000;
       rapport = 59000;
-      lowestPoint = 23770000;
-      highestPoint = 24490000;
+      lowestPoint = 23000000;
+      highestPoint = 26000000;
       radius = 58232;
       increment = 1000;
+      sol = color(214, 184, 120);
+      repertoireEnregistrement = "graduationSphereSaturne/####.png";
+      break;
+
+      case("Neptune"):
+      mass = 568.46e24;
+      semiMajorAxis = 4498400000L;
+      rapport = 59000;
+      lowestPoint = 23000000;
+      highestPoint = 26000000;
+      radius = 58232;
+      increment = 1000;
+      sol = color(214, 184, 120);
+      repertoireEnregistrement = "graduationSphereSaturne/####.png";
+      break;
+
+      case("Egg"):
+      mass = 9.891e29;
+      semiMajorAxis = 5790923;
+      rapport = 25000;
+      lowestPoint = 2400000;
+      highestPoint = 13860000;
+      radius = 235681;
+      increment = 10000;
       sol = color(214, 184, 120);
       repertoireEnregistrement = "graduationSphereSaturne/####.png";
       break;

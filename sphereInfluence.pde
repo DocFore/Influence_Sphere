@@ -1,4 +1,4 @@
-planete objet = new planete("Terre"); //<>//
+planete objet = new planete("Saturne"); //<>//
 
 
 
@@ -23,13 +23,13 @@ void setup() {
       previous.force(soleil, astre, objet.mass);
 
 
-      for (double rho = objet.lowestPoint; rho < (double)objet.highestPoint; rho+=(double)objet.increment) {
+      for (int rho = (int)objet.lowestPoint; rho < (int)objet.highestPoint; rho+=(int)objet.increment) {
           //println(rho + " " + theta + " " + phi);
 
 
-        float z = (float)rho*cos(phi*PI/180)*cos(theta*PI/180);
-        float y = (float)rho*cos(phi*PI/180)*sin(theta*PI/180);
-        float x = (float)rho*sin(phi*PI/180);
+        float z = rho*cos(phi*PI/180)*cos(theta*PI/180);
+        float y = rho*cos(phi*PI/180)*sin(theta*PI/180);
+        float x = rho*sin(phi*PI/180);
 
         emplacement point = new emplacement(new PVector(astre.x+x, y, z));
         point.force(soleil, astre, objet.mass);
@@ -39,12 +39,12 @@ void setup() {
           previous.copy(point);
         } else {
           if (rho<minimum) {
-            minimum = (float)rho;
+            minimum = rho;
           }
           if (rho>maximum) {
-            maximum = (float)rho;
+            maximum = rho;
           }
-          previous.rho = (float)rho;
+          previous.rho = rho;
           points.add(previous);
           break;
         }
@@ -90,7 +90,7 @@ void draw() {
   angle+=PI/300;
 
   //if (angle < 2 *PI) {
-  //  saveFrame(astre.repertoireEnregistrement);
+  //  saveFrame(objet.repertoireEnregistrement);
   //}
 }
 
